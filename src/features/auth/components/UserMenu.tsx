@@ -8,12 +8,10 @@ export function UserMenu() {
 
   return (
     <div className="flex items-center gap-4">
-      <div className="flex items-center gap-2">
-        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
-          {user.name.charAt(0)}
-        </div>
-        <span className="font-medium">{user.name}</span>
+      <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+        {(user.name ?? user.email ?? '?').charAt(0).toUpperCase()}
       </div>
+      <span className="font-medium">{user.name ?? user.email}</span>
       <Button variant="outline" onClick={logout}>
         Sair
       </Button>
