@@ -19,7 +19,7 @@ export function useAuth() {
       return authApi.login(validated)
     },
     onSuccess: (data) => {
-      setAuth(data.user, data.token)
+      setAuth(data.user, data.accessToken)
       window.location.href = getRedirectUrl()
     },
   })
@@ -30,7 +30,7 @@ export function useAuth() {
       return authApi.signup(validated)
     },
     onSuccess: (data) => {
-      setAuth(data.user, data.token)
+      setAuth(data.user, data.accessToken)
       window.location.href = getRedirectUrl()
     },
   })

@@ -20,10 +20,23 @@ export const useAuthStore = create<AuthStore>()(
 
       setAuth: (user, token) => {
         set({ user, token, isAuthenticated: true })
+        try {
+          if (token) {
+            // Also store a simple token key for consumers that expect it
+            localStorage.setItem('token', token)
+          }
+        } catch {
+          /* ignore storage errors */
+        }
       },
 
       logout: () => {
         set({ user: null, token: null, isAuthenticated: false })
+        try {
+          localStorage.removeItem('token')
+        } catch {
+          /* ignore storage errors */
+        }
       },
 
       checkAuth: () => {
