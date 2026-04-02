@@ -7,12 +7,12 @@ export function LoginPageHost() {
   const { isAuthenticated } = useAuth()
 
   useEffect(() => {
-    if (isAuthenticated()) {
+    if (isAuthenticated) {
       window.location.href = '/'
     }
   }, [])
 
-  if (isAuthenticated()) return null
+  if (isAuthenticated) return null
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-muted/50">
