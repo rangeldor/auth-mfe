@@ -8,6 +8,7 @@ interface AuthStore {
   isAuthenticated: boolean
   setAuth: (user: User, token: string) => void
   logout: () => void
+  invalidate: () => void
   checkAuth: () => boolean
 }
 
@@ -34,6 +35,16 @@ export const useAuthStore = create<AuthStore>()(
         set({ user: null, token: null, isAuthenticated: false })
         try {
           localStorage.removeItem('token')
+        } catch {
+          /* ignore storage errors */
+        }
+      },
+
+      invalidate: () => {
+        set({ user: null, token: null, isAuthenticated: false })
+        try {
+          localStorage.removeItem('token')
+          localStorage.removeItem('auth-storage')
         } catch {
           /* ignore storage errors */
         }

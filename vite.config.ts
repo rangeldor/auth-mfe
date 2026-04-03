@@ -32,6 +32,7 @@ export default defineConfig({
         './useAuth': './src/features/auth/hooks/useAuth.ts',
         './UserMenu': './src/features/auth/components/UserMenu.tsx',
         './AuthNav': './src/features/auth/components/AuthNav.tsx',
+        './authActions': './src/features/auth/services/authActions.ts',
         './ProtectedRoute': './src/shared/components/ProtectedRoute.tsx',
         './routes': './src/routes/authRoutes.tsx',
       },
