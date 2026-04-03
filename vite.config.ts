@@ -27,13 +27,13 @@ export default defineConfig({
       filename: 'remoteEntry.js',
       exposes: {
         './AuthProvider': './src/app/providers/AuthProvider.tsx',
-        './LoginPage': './src/features/auth/pages/LoginPageHost.tsx',
-        './SignupPage': './src/features/auth/pages/SignupPageHost.tsx',
+        './LoginPage': './src/exports/LoginPage.ts',
+        './SignupPage': './src/exports/SignupPage.ts',
+        './AuthNav': './src/exports/AuthNav.ts',
+        './UserMenu': './src/exports/UserMenu.ts',
+        './ProtectedRoute': './src/exports/ProtectedRoute.ts',
         './useAuth': './src/features/auth/hooks/useAuth.ts',
-        './UserMenu': './src/features/auth/components/UserMenu.tsx',
-        './AuthNav': './src/features/auth/components/AuthNav.tsx',
         './authActions': './src/features/auth/services/authActions.ts',
-        './ProtectedRoute': './src/shared/components/ProtectedRoute.tsx',
         './routes': './src/routes/authRoutes.tsx',
       },
       shared: {
